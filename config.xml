@@ -48,7 +48,8 @@
 
   <!-- make status bar w/ white text -->
   <!-- <gap:plugin name="org.apache.cordova.statusbar" /> -->
-  <gap:plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="npm" />
+  <!-- <gap:plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="npm" /> -->
+  <plugin name="cordova-plugin-statusbar" source="npm" />
   <preference name="StatusBarOverlaysWebView" value="true" />
   <preference name="StatusBarStyle" value="lightcontent" />
   <preference name="StatusBarBackgroundColor" value="#000b1c" />

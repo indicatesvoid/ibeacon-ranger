@@ -56,7 +56,8 @@
   <preference name="android-minSdkVersion" value="18" />
 
   <!-- prevent app from sleeping -->
-  <gap:plugin name="nl.x-services.plugins.insomnia" />
+  <!-- <gap:plugin name="nl.x-services.plugins.insomnia" /> -->
+  <gap:plugin name="nl.x-services.plugins.insomnia" spec="4.0.1" source="npm" />
 
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>

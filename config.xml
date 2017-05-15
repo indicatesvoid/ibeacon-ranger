@@ -42,7 +42,7 @@
 
   <!-- iBeacon plugin -->
   <!-- <gap:plugin name="com.unarin.cordova.beacon" /> -->
-  <gap:plugin name="com.unarin.cordova.beacon" spec="3.2.1" source="npm" />
+  <gap:plugin name="com.unarin.cordova.beacon" spec="3.2.1" source="pgb" />
 
   <!-- make status bar w/ white text -->
   <!-- <gap:plugin name="org.apache.cordova.statusbar" /> -->

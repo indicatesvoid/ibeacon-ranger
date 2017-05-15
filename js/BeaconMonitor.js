@@ -17,39 +17,27 @@
  * under the License.
  */
 function BeaconMonitor() {
-	
-	//Monitor if within proximity of up to 20 iBeacons (allowed 
+
+	//Monitor if within proximity of up to 20 iBeacons (allowed
     //by Apple), even when app is not running. This is ideal
     //for larger areas, like entering a museum or navigating
     //between multiple buildings or very, very large rooms
     //note: requires ...requestAlwaysAuthorization() to work,
     //which could annoy user when app is ALWAYS monitoring
-    //even when app is not active 
+    //even when app is not active
 	this.monitorBeacons = [
         {
             identifier:'ib1',
-            uuid:'A495FF99-C5B1-4B44-B512-1370F02D74DE',
-            major:1,
-            minor:1
+            uuid:'713D0000-503E-4C75-BA94-3148F18D941E',
+            major:0,
+            minor:256
         },
         {
             identifier:'ib2',
-            uuid:'A495FF99-C5B1-4B44-B512-1370F02D74DE',
-            major:1,
-            minor:2
+            uuid:'713D0000-503E-4C75-BA94-3148F18D941E',
+            major:0,
+            minor:0
         },
-        {
-            identifier:'ib3',
-            uuid:'A495FF99-C5B1-4B44-B512-1370F02D74DE',
-            major:1,
-            minor:3
-        },
-        {
-            identifier:'ib4',
-            uuid:'A495FF99-C5B1-4B44-B512-1370F02D74DE',
-            major:1,
-            minor:4
-        }
     ];
 
     //When app is active, track the distance from iBeacons,
@@ -84,66 +72,66 @@ function BeaconMonitor() {
             minor:4
         },
         */
-        {
-            identifier:'onyx1',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:17163
-        },
-        {
-            identifier:'onyx2',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:16330
-        },
-        {
-            identifier:'onyx3',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:212,
-            minor:64096
-        },
-        {
-            identifier:'onyx4',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:25553
-        },
-        {
-            identifier:'onyx5',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:17671
-        },
-        {
-            identifier:'onyx6',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:27164
-        },
-        {
-            identifier:'onyx7',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:16351
-        },
-        {
-            identifier:'onyx8',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:212,
-            minor:65357
-        },
-        {
-            identifier:'onyx9',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:26374
-        },
-        {
-            identifier:'onyx10',
-            uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
-            major:213,
-            minor:2617
-        }
+        // {
+        //     identifier:'onyx1',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:17163
+        // },
+        // {
+        //     identifier:'onyx2',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:16330
+        // },
+        // {
+        //     identifier:'onyx3',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:212,
+        //     minor:64096
+        // },
+        // {
+        //     identifier:'onyx4',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:25553
+        // },
+        // {
+        //     identifier:'onyx5',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:17671
+        // },
+        // {
+        //     identifier:'onyx6',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:27164
+        // },
+        // {
+        //     identifier:'onyx7',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:16351
+        // },
+        // {
+        //     identifier:'onyx8',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:212,
+        //     minor:65357
+        // },
+        // {
+        //     identifier:'onyx9',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:26374
+        // },
+        // {
+        //     identifier:'onyx10',
+        //     uuid:'20CAE8A0-A9CF-11E3-A5E2-0800200C9A66',
+        //     major:213,
+        //     minor:2617
+        // }
     ];
 
 
@@ -168,7 +156,7 @@ BeaconMonitor.prototype.createRangeListMarkup = function() {
         html += '   <div id="rBeaconRange' + i + '" class="col col-range range-unknown"></div>' + "\n";
         html += '   <div id="rBeaconRangeLabel' + i + '" class="col col-range-label">UNKNOWN</div>' + "\n";
         html += '   <div id="rBeaconIdentifyer' + i + '" class="col col-identifier">' + this.rangeBeacons[i].identifier + '</div>' + "\n";
-        html += '   <div id="rBeaconRSSI' + i + '" class="col col-rssi">0</div>' + "\n";         
+        html += '   <div id="rBeaconRSSI' + i + '" class="col col-rssi">0</div>' + "\n";
         html += '</div>' + "\n";
     }
 
@@ -186,7 +174,7 @@ BeaconMonitor.prototype.createMonitorListMarkup = function() {
         html += '   <div id="mBeaconColor' + i + '" class="col col-color color-outside"></div>' + "\n";
         html += '   <div id="mBeaconState' + i + '" class="col col-state state-outside"></div>' + "\n";
         html += '   <div id="mBeaconStateLabel' + i + '" class="col col-state-label">OUTSIDE</div>' + "\n";
-        html += '   <div id="mBeaconIdentifier' + i + '" class="col col-state-identifier">' + this.monitorBeacons[i].identifier + '</div>' + "\n";        
+        html += '   <div id="mBeaconIdentifier' + i + '" class="col col-state-identifier">' + this.monitorBeacons[i].identifier + '</div>' + "\n";
         html += '</div>' + "\n";
     }
 
@@ -197,7 +185,7 @@ BeaconMonitor.prototype.createMonitorListMarkup = function() {
 //reset readings to min/unknown
 BeaconMonitor.prototype.resetReadings = function() {
     var i;
-    
+
     //range table and graph
     for(i=0; i<this.rangeBeacons.length; i++) {
         document.getElementById('rBeaconRSSI' + this.rangeBeacons[i].i).innerHTML = "0";
@@ -218,7 +206,7 @@ BeaconMonitor.prototype.setDeligate = function() {
     //talked about as "monitoring"
     delegate.didDetermineStateForRegion = function (pluginResult) {
     	var state;
-        
+
         //update visuals for monitored iBeacon
         for(i=0; i<this.monitorBeacons.length; i++) {
         	if(pluginResult.region.uuid.toLowerCase() == this.monitorBeacons[i].uuid.toLowerCase() && pluginResult.region.major == this.monitorBeacons[i].major && pluginResult.region.minor == this.monitorBeacons[i].minor) {
@@ -245,7 +233,7 @@ BeaconMonitor.prototype.setDeligate = function() {
 
         //update visuals for ranged iBeacon
         for(i=0; i<this.rangeBeacons.length; i++) {
-        	
+
             //Work around Android not picking up iBeacons sometimes when event is fired (issue posted)
             if(pluginResult.hasOwnProperty('beacons') && pluginResult.beacons.length > 0) {
 
@@ -309,7 +297,7 @@ BeaconMonitor.prototype.setDeligate = function() {
     //also had to UNINSTALL, reinstall on iOS to see changes
     cordova.plugins.locationManager.requestAlwaysAuthorization();
     //if not monitoring, but ranging only when app is in use, use this line instead:
-    //cordova.plugins.locationManager.requestWhenInUseAuthorization(); 
+    //cordova.plugins.locationManager.requestWhenInUseAuthorization();
 };
 
 //mark the closest iBeacon with a star
@@ -396,7 +384,6 @@ BeaconMonitor.prototype.onDeviceReady = function() {
     } catch(err) {
         alert(err);
         this.logToDom(err.message);
-    }  
+    }
 
 };
-
